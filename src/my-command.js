@@ -1,19 +1,3 @@
-export default function(context) {
-    const  sketch = context.api()
-    context.document.showMessage("He, It's alieve 🙌");
-
-    let document = sketch.selectedDocument
-    log('Document');
-    log(document);
-    // log(SVGImporter);
-
-    // let page = context.document.pages;
-    // log(page)
-    //
-    let page = document.selectedPage
-    log('>> artboard')
-
-
 let svgContent = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="111pt" height="26pt" viewBox="0 0 111 26" version="1.1">
 <defs>
@@ -133,16 +117,36 @@ let svgContent = `<?xml version="1.0" encoding="UTF-8"?>
 </g>
 </svg>`;
 
-    var svgString = NSString.stringWithString(svgContent);
-    var svgData = svgString.dataUsingEncoding(NSUTF8StringEncoding);
+export default function(context) {
+    const  sketch = context.api()
+    context.document.showMessage("He, It's alieve 🙌");
+
+    let document = sketch.selectedDocument
+    log('Document');
+    log(document);
+
+    let page = document.selectedPage
+    log('>> artboard')
 
 
-    var svgImporter = MSSVGImporter.svgImporter();
+    let svgString = NSString.stringWithString(svgContent);
+    let svgData = svgString.dataUsingEncoding(NSUTF8StringEncoding);
+
+
+
+    let svgImporter = MSSVGImporter.svgImporter();
 
     svgImporter.prepareToImportFromData(svgData);
-    var svgLayer = svgImporter.importAsLayer();
 
+    let svgLayer = svgImporter.importAsLayer();
     svgLayer.setName("LaTex");
-    context.document.currentPage().addLayers([svgLayer]);
+
+    let currentPage = context.document.currentPage();
+    let currentArtboard = currentPage.currentArtboard();
+
+
+    currentArtboard.addLayer(svgLayer);
+
     context.document.showMessage("no error 🙌");
 }
+
