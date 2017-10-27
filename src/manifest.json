@@ -6,12 +6,18 @@
       "name": "my-command",
       "identifier": "my-command-identifier",
       "script": "./my-command.js"
+    },
+    {
+      "name": "Launch",
+      "identifier": "launch-web-view",
+      "script": "./launch-web-view.js"
     }
   ],
   "menu": {
     "title": "latex-sketch-plugin",
     "items": [
-      "my-command-identifier"
+      "my-command-identifier",
+      "launch-web-view"
     ]
   }
 }
