@@ -10,7 +10,8 @@
     "main": "plugin.sketchplugin"
   },
   "resources": [
-    "resources/ui.js"
+    "resources/ui.js",
+    "src/placeSvg.js"
   ],
   "scripts": {
     "build": "skpm-build",

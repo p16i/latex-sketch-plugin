@@ -1,4 +1,5 @@
 import WebUI from 'sketch-module-web-view';
+import placeSvg from './placeSvg';
 
 export default function (context) {
   const options = {
@@ -16,7 +17,7 @@ export default function (context) {
     frameLoadDelegate: { // https://developer.apple.com/reference/webkit/webframeloaddelegate?language=objc
       'webView:didFinishLoadForFrame:': function (webView, webFrame) {
         context.document.showMessage('UI loaded!')
-        WebUI.clean()
+        // WebUI.clean()
       }
     },
     uiDelegate: {}, // https://developer.apple.com/reference/webkit/webuidelegate?language=objc
@@ -26,8 +27,14 @@ export default function (context) {
       // return `false` to prevent closing the panel
     },
     handlers: {
-      postContent: function (content) {
-        context.document.showMessage('Received content from UI');
+      postContent: function () {
+        const svg = webUI.eval(
+          `sketchBridge()`
+        );
+        const complete = `<?xml version="1.0" encoding="UTF-8"?>${svg}`;
+        log('---->')
+        log(complete);
+        placeSvg(context, complete);
       }
     }
   }

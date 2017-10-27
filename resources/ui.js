@@ -7,9 +7,16 @@ const output = document.querySelector('.output');
 const button = document.querySelector('.button');
 
 const go = function (evt) {
-  const svg = output.querySelector('.MathJax_SVG').innerHTML;
-  console.log(svg);
-  pluginCall('postContent', svg);
+  pluginCall('postContent');
+}
+
+const returnsSvg = function () {
+  let combined = '';
+  Array.from(document.querySelectorAll('svg')).forEach(
+    svg => combined += svg.innerHTML,
+  );
+console.log(combined);
+  return `<svg>${combined}</svg>`;
 }
 
 const process = function (evt) {
@@ -19,5 +26,7 @@ const process = function (evt) {
 
 input.addEventListener('input', process);
 button.addEventListener('click', go);
+
+window.sketchBridge = returnsSvg;
 
 console.log('init');
