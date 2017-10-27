@@ -9,6 +9,9 @@
     "manifest": "src/manifest.json",
     "main": "plugin.sketchplugin"
   },
+  "resources": [
+    "resources/ui.js"
+  ],
   "scripts": {
     "build": "skpm-build",
     "watch": "skpm-build --watch",

@@ -1,5 +1,7 @@
 import pluginCall from 'sketch-module-web-view/client'
 
+console.log('begin init');
+
 const input = document.querySelector('.input');
 const output = document.querySelector('.output');
 const button = document.querySelector('.button');
@@ -17,3 +19,5 @@ const process = function (evt) {
 
 input.addEventListener('input', process);
 button.addEventListener('click', go);
+
+console.log('init');
