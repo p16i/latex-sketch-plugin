@@ -11,8 +11,6 @@ export default function(context) {
     // log(page)
     //
     let page = document.selectedPage
-    log('>> artboard')
-
 
 let svgContent = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="111pt" height="26pt" viewBox="0 0 111 26" version="1.1">
@@ -143,6 +141,9 @@ let svgContent = `<?xml version="1.0" encoding="UTF-8"?>
     var svgLayer = svgImporter.importAsLayer();
 
     svgLayer.setName("LaTex");
-    context.document.currentPage().addLayers([svgLayer]);
+    let currentArtboard = context.document.currentPage().currentArtboard();
+    log(currentArtboard);
+    currentArtboard.addLayer(svgLayer);
+
     context.document.showMessage("no error 🙌");
 }

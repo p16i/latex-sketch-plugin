@@ -80,9 +80,31 @@ var output = document.querySelector('.output');
 var button = document.querySelector('.button');
 
 var go = function go(evt) {
-  var svg = output.querySelector('.MathJax_SVG').innerHTML;
-  console.log(svg);
-  (0, _client2['default'])('postContent', svg);
+  (0, _client2['default'])('postContent');
+};
+
+var returnsSvg = function returnsSvg() {
+  var svgParent = document.getElementsByClassName('MathJax_SVG')[0];
+
+  var svg = svgParent.children[0];
+  var refs = svg.querySelectorAll('use');
+
+  for (var i = 0; i < refs.length; i++) {
+    var ru = refs[i];
+
+    var id = ru.getAttribute('href').replace('#', '');
+
+    var actual = document.getElementById(id);
+
+    ru.innerHTML = actual.outerHTML;
+  }
+
+  var data = svg.innerHTML.replace(/stroke-width="\d+"/g, '');
+
+  input.value = '';
+  output.innerHTML = '';
+
+  return '<svg>' + String(data) + '</svg>';
 };
 
 var process = function process(evt) {
@@ -92,6 +114,8 @@ var process = function process(evt) {
 
 input.addEventListener('input', process);
 button.addEventListener('click', go);
+
+window.sketchBridge = returnsSvg;
 
 console.log('init');
 

@@ -11,12 +11,31 @@ const go = function (evt) {
 }
 
 const returnsSvg = function () {
-  let combined = '';
-  Array.from(document.querySelectorAll('svg')).forEach(
-    svg => combined += svg.innerHTML,
-  );
-console.log(combined);
-  return `<svg>${combined}</svg>`;
+  let svgParent = document.getElementsByClassName('MathJax_SVG')[0];
+
+  let svg = svgParent.children[0];
+  let refs = svg.querySelectorAll('use');
+
+
+  for(let i = 0; i < refs.length; i++ ){
+      let ru = refs[i]
+
+      let id = ru.getAttribute('href').replace('#','');
+
+      let actual = document.getElementById(id);
+
+      ru.innerHTML = actual.outerHTML;
+
+  }
+
+  let data = svg.innerHTML.replace(/stroke-width="\d+"/g,'')
+
+
+  input.value = '';
+  output.innerHTML ='';
+
+
+  return `<svg>${data}</svg>`;
 }
 
 const process = function (evt) {

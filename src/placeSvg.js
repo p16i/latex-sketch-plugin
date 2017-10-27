@@ -1,5 +1,6 @@
 export default function(context, svgContent) {
   const  sketch = context.api()
+  const  scalingFactor = 0.1;
   context.document.showMessage("He, It's alieve 🙌");
 
   let document = sketch.selectedDocument
@@ -13,16 +14,61 @@ export default function(context, svgContent) {
   let page = document.selectedPage
   log('>> artboard')
 
-  var svgString = NSString.stringWithString(svgContent);
-  var svgData = svgString.dataUsingEncoding(NSUTF8StringEncoding);
+  let svgString = NSString.stringWithString(svgContent);
+  let svgData = svgString.dataUsingEncoding(NSUTF8StringEncoding);
 
 
-  var svgImporter = MSSVGImporter.svgImporter();
+  let svgImporter = MSSVGImporter.svgImporter();
 
   svgImporter.prepareToImportFromData(svgData);
-  var svgLayer = svgImporter.importAsLayer();
+  let svgLayer = svgImporter.importAsLayer();
 
   svgLayer.setName("LaTex");
-  context.document.currentPage().addLayers([svgLayer]);
-  context.document.showMessage("no error 🙌");
+
+
+  // let currentArtboard = page.currentArtboard;
+
+  // currentArtboard.addLayer(svgLayer);
+
+  // log(currentArtboard);
+  // currentArtboard.addLayer(svgLayer);
+  // context.document.currentPage().addLayers([svgLayer]);
+    let artboard = context.document.currentPage().currentArtboard();
+    let artboardFrame = artboard.frame();
+
+    let svgFrame = svgLayer.frame();
+    log('artboard frame');
+    log(artboardFrame.width());
+    log('---------');
+    // log('svg frame');
+    // log(svgFrame);
+    let newWidth = artboardFrame.width()*scalingFactor;
+    let newHeight = svgFrame.height() / svgFrame.width() * newWidth;
+
+    // let newFrame =
+    log(newWidth);
+    log(newHeight);
+
+    svgFrame.width = newWidth;
+    svgFrame.height = newHeight;
+
+    svgFrame.x = (artboardFrame.width() - newWidth) / 2;
+    svgFrame.y = (artboardFrame.height() - newHeight) / 2;
+
+    log(svgLayer.style());
+
+    artboard.addLayer(svgLayer);
+    log(svgLayer.children());
+    let children = svgLayer.children();
+
+    for(let i = 0; i < children.length; i++) {
+        let child = children[i];
+        if(child.isKindOfClass(MSShapeGroup)) {
+            // log(child.style().class().mocha().instanceMethodsWithAncestors());
+            child.style().removeAllStyleBorders();
+        }
+    }
+
+
+    context.document.showMessage("no error 🙌");
 }
