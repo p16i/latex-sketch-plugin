@@ -47,8 +47,8 @@ const process = function (evt) {
 const setLatex = function(txt, updateTextField) {
   output.innerHTML = `\$\$${txt}\$\$`;
   if(updateTextField) {
-      console.log('update');
-    input.value = txt;
+      input.value = txt;
+      document.getElementById('bt-submit').innerHTML = 'Update';
   }
 
   if(MathJax) {
@@ -63,3 +63,4 @@ window.setLatex = setLatex;
 window.sketchBridge = returnsSvg;
 
 console.log('init');
+input.focus();

@@ -22,14 +22,13 @@
             font-family: 'Libre Baskerville', serif;
         }
         .input {
-            <!-- background: red; -->
             height: 100px
         }
         .output {
-            padding: 10px;
-            height: 100px;
-            <!-- background: yellow; -->
+            padding-top: 10px;
+            height: 150px;
             text-align: center;
+            background: rgb(252, 252, 252);
         }
 
         .footer {
@@ -39,18 +38,53 @@
             width: 100%;
             height: 20px;
         }
+
+        textarea {
+            width: 80%;
+            height: 100px;
+            border: none;
+            overflow: auto;
+            outline: none;
+
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+
+        .output-container {
+            width: 80%;
+            border-top: 1px dotted grey;
+            margin: auto;
+            position: relative;
+        }
+
+        .preview-desc {
+            float: right;
+            position: absolute;
+            top: 2.5px;
+            right: 2.5px;
+            opacity: 0.8;
+            font-size: 8px;
+            font-family: sans-serif;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
-  <h1>LaTeX <i class="fa fa-heart" aria-hidden="true"></i> Sketch</h1>
-  <textarea class="input" style="width:100%"/></textarea>
-  <div class="output"></div>
+  <h1>LATEX ⚡ SKETCH</h1>
+  <textarea class="input" placeholder="E=mc^2"/></textarea>
+  <div class="output-container">
+      <span class="preview-desc">
+        <i class="fa fa-eye" aria-hidden="true"></i>
+      </span>
+    <div class="output"></div>
+  </div>
   <br>
-  <button class="button">Insert</button>
+  <button class="button" id="bt-submit">Insert</button>
   <script type="text/javascript" src="../ui.js"></script>
   <div class="footer">
     <i class="fa fa-terminal" aria-hidden="true"></i> with
-    <i class="fa fa-heart" aria-hidden="true"></i> by  PAT and ANDREW
+    <i class="fa fa-heart" aria-hidden="true"></i> by  Pat and Andrew
   </div>
 </body>
 </html>

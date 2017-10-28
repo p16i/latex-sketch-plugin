@@ -1,17 +1,17 @@
 import WebUI from 'sketch-module-web-view';
 import placeSvg from './placeSvg';
 
-export default function(context, isEditMenu) {
+export default function(context, isCalledFromEditMenu) {
     let webUI = new WebUI(context, require('../resources/ui.html'),   {
         identifier: 'unique.id' + Math.random(),
         x: 0,
         y: 0,
-        width: 400,
+        width: 600,
         height: 500,
         background: NSColor.whiteColor(),
         blurredBackground: false,
         onlyShowCloseButton: false,
-        title: 'LATEX + SKETCH',
+        title: 'LATEX ⚡ SKETCH',
         hideTitleBar: false,
         shouldKeepAround: true,
         frameLoadDelegate: { // https://developer.apple.com/reference/webkit/webframeloaddelegate?language=objc
@@ -22,7 +22,7 @@ export default function(context, isEditMenu) {
                     context.document.showMessage('Please select an latex layer');
                     return;
                 }
-                if(isEditMenu) {
+                if(isCalledFromEditMenu) {
                     context.document.showMessage('UI loaded! from edit');
                     webUI.eval(`setLatex("${userInfo}", true)`);
                 } else {
@@ -40,14 +40,14 @@ export default function(context, isEditMenu) {
                     return false;
                 }
                 let selectedLayer;
-                if(isEditMenu) {
+                if(isCalledFromEditMenu) {
                     selectedLayer = context.selection[0];
                 }
 
                 const content = webUI.eval(`sketchBridge()`);
                 let data = content.split(/::::/);
 
-                placeSvg(context, { latexStr: data[0], svg: data[1] }, selectedLayer);
+                placeSvg(context, { latexStr: data[0], svg: data[1] }, isCalledFromEditMenu);
 
                 webUI.panel.close();
                 WebUI.clean();
