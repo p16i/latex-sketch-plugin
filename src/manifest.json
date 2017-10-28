@@ -3,15 +3,21 @@
   "bundleVersion": 1,
   "commands": [
     {
-      "name": "my-command",
-      "identifier": "my-command-identifier",
-      "script": "./my-command.js"
+      "name": "Insert",
+      "identifier": "insert",
+      "script": "./insert.js"
+    },
+    {
+      "name": "Edit",
+      "identifier": "edit",
+      "script": "./edit.js"
     }
   ],
   "menu": {
-    "title": "latex-sketch-plugin",
+    "title": "LATEX ⚡ SKETCH",
     "items": [
-      "my-command-identifier"
+      "insert",
+      "edit"
     ]
   }
 }

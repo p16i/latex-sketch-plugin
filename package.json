@@ -9,6 +9,11 @@
     "manifest": "src/manifest.json",
     "main": "plugin.sketchplugin"
   },
+  "resources": [
+    "resources/editor.js",
+    "src/placeSvg.js",
+    "src/webui.js"
+  ],
   "scripts": {
     "build": "skpm-build",
     "watch": "skpm-build --watch",
@@ -17,5 +22,8 @@
   },
   "devDependencies": {
     "@skpm/builder": "^0.1.4"
+  },
+  "dependencies": {
+    "sketch-module-web-view": "^0.2.0"
   }
 }
