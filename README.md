@@ -42,3 +42,6 @@ The `-f` option causes `skpm log` to not stop when the end of logs is reached, b
 - Pieter Omvlee and Mathieu Dutour for supports during the hackathon.
 - Roy van Rooijen, Sergi Miral, IXDS Berlin and all people behind `Design Tools Berlin` for organizing this hackathon.
 
+## License
+
+[MIT](https://tldrlegal.com/license/mit-license)
