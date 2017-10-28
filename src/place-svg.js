@@ -48,7 +48,7 @@ export default function(context, content, isCalledFromEditMenu) {
         }
     }
 
-    command.setValue_forKey_onLayer_forPluginIdentifier(content.latexStr, 'latexStr', svgLayer, 'latex-plugin');
+    command.setValue_forKey_onLayer_forPluginIdentifier(encodeURI(content.latexStr), 'latexStr', svgLayer, 'latex-plugin');
 
     context.document.showMessage(`LaTeX document is rendered! 🙌`);
 }

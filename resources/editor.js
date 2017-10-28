@@ -45,11 +45,13 @@ const process = function (evt) {
 }
 
 const setLatex = function(txt, updateTextField) {
-  output.innerHTML = `\$\$${txt}\$\$`;
   if(updateTextField) {
+      txt = decodeURI(txt);
       input.value = txt;
       document.getElementById('bt-submit').innerHTML = 'Update';
   }
+
+  output.innerHTML = `\$\$${txt}\$\$`;
 
   if(MathJax) {
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);

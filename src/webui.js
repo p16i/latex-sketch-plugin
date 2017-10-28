@@ -24,9 +24,8 @@ export default function(context, isCalledFromEditMenu) {
                 }
                 if(isCalledFromEditMenu) {
                     context.document.showMessage('UI loaded! from edit');
-                    webUI.eval(`setLatex("${userInfo}", true)`);
+                    webUI.eval(`setLatex('${userInfo}', true)`);
                 } else {
-
                     context.document.showMessage('UI loaded! from insert');
                 }
             }
