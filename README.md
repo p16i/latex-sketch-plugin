@@ -34,11 +34,11 @@ skpm log
 The `-f` option causes `skpm log` to not stop when the end of logs is reached, but rather to wait for additional data to be appended to the input
 
 
-## Contributors
-- Andrw Nicolaou
+## Contributor
+- Andrew Nicolaou
 
 
-## Acknoledgement
+## Acknoledgements
 - Pieter Omvlee and Mathieu Dutour for supports during the hackathon.
 - Roy van Rooijen, Sergi Miral, IXDS Berlin and all people behind `Design Tools Berlin` for organizing this hackathon.
 
