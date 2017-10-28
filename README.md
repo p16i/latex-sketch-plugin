@@ -3,7 +3,7 @@
 This plugin brings LaTeX functionalities to Sketch. This allows us to directly write mathematical formulas in Sketch itself.
 It is based on `MathJax`'s API.
 
-![](https://i.imgur.com/vcZTrys.png)
+![](https://i.imgur.com/7szobaj.png)
 
 This plugin was developed  during [Sketch Plugin Hackathon](https://designtoolsberlin.com/), Berlin, 27 + 28 October 2017.
 
