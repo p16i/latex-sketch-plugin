@@ -1,6 +1,7 @@
-export default function(context, svgContent) {
+export default function(context, content, oldLayer) {
+  const command = context.command;
   const  sketch = context.api()
-  const  scalingFactor = 0.1;
+  const  scalingFactor = 0.2;
   context.document.showMessage("He, It's alieve 🙌");
 
   let document = sketch.selectedDocument
@@ -13,8 +14,10 @@ export default function(context, svgContent) {
   //
   let page = document.selectedPage
   log('>> artboard')
+  log(content);
 
-  let svgString = NSString.stringWithString(svgContent);
+  let xmlSVG = `<?xml version="1.0" encoding="UTF-8"?>${content.svg}`;
+  let svgString = NSString.stringWithString(xmlSVG);
   let svgData = svgString.dataUsingEncoding(NSUTF8StringEncoding);
 
 
@@ -23,7 +26,7 @@ export default function(context, svgContent) {
   svgImporter.prepareToImportFromData(svgData);
   let svgLayer = svgImporter.importAsLayer();
 
-  svgLayer.setName("LaTex");
+  svgLayer.setName('__LATEX');
 
 
   // let currentArtboard = page.currentArtboard;
@@ -52,23 +55,36 @@ export default function(context, svgContent) {
     svgFrame.width = newWidth;
     svgFrame.height = newHeight;
 
-    svgFrame.x = (artboardFrame.width() - newWidth) / 2;
-    svgFrame.y = (artboardFrame.height() - newHeight) / 2;
 
     log(svgLayer.style());
 
+    if(oldLayer) {
+        log('there is oldLayer')
+        // log(oldLayer);
+        // log(oldLayer.class().mocha().instanceMethodsWithAncestors());
+        svgFrame.x = oldLayer.frame().x();
+        svgFrame.y = oldLayer.frame().y();
+
+        oldLayer.removeFromParent();
+        // oldLayer = null;
+    } else {
+        svgFrame.x = (artboardFrame.width() - newWidth) / 2;
+        svgFrame.y = (artboardFrame.height() - newHeight) / 2;
+    }
+
     artboard.addLayer(svgLayer);
-    log(svgLayer.children());
     let children = svgLayer.children();
+
 
     for(let i = 0; i < children.length; i++) {
         let child = children[i];
         if(child.isKindOfClass(MSShapeGroup)) {
-            // log(child.style().class().mocha().instanceMethodsWithAncestors());
             child.style().removeAllStyleBorders();
         }
     }
 
+    command.setValue_forKey_onLayer_forPluginIdentifier(content.latexStr, 'latexStr',
+                                                        svgLayer, 'latex-plugin');
 
-    context.document.showMessage("no error 🙌");
+    context.document.showMessage(`LaTeX document is rendered! 🙌`);
 }

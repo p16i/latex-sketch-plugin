@@ -28,24 +28,35 @@ const returnsSvg = function () {
 
   }
 
-  let data = svg.innerHTML.replace(/stroke-width="\d+"/g,'')
+  let data = svg.outerHTML.replace(/stroke-width="\d+"/g,'')
 
+  let latexStr = input.value;
 
   input.value = '';
   output.innerHTML ='';
 
+  let res = `${latexStr}::::${data}`;
 
-  return `<svg>${data}</svg>`;
+  return res;
 }
 
 const process = function (evt) {
-  output.innerHTML = `\$${evt.target.value}\$`;
+    setLatex(evt.target.value);
+}
+
+const setLatex = function(txt, updateTextField) {
+  output.innerHTML = `\$\$${txt}\$\$`;
+  if(updateTextField) {
+      console.log('update');
+    input.value = txt;
+  }
   MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
 
 input.addEventListener('input', process);
 button.addEventListener('click', go);
 
+window.setLatex = setLatex;
 window.sketchBridge = returnsSvg;
 
 console.log('init');

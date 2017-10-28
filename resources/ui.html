@@ -7,20 +7,51 @@
   <title>Document</title>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-      jax: ["input/TeX", 'output/SVG', 'output/PreviewHTML'],
+      jax: ["input/TeX", 'output/SVG', 'output/PreviewHTML', 'logo'],
       extensions: ["tex2jax.js"],
       tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
     });
   </script>
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
-</script>
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Libre Baskerville', serif;
+        }
+        .input {
+            <!-- background: red; -->
+            height: 100px
+        }
+        .output {
+            padding: 10px;
+            height: 100px;
+            <!-- background: yellow; -->
+            text-align: center;
+        }
+
+        .footer {
+            font-size: 0.5em;
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Enter maths here</h1>
-  <input class="input" />
-  <button class="button">Go!!!</button>
-  <div class="output" />
+  <h1>LaTeX <i class="fa fa-heart" aria-hidden="true"></i> Sketch</h1>
+  <textarea class="input" style="width:100%"/></textarea>
+  <div class="output"></div>
+  <br>
+  <button class="button">Insert</button>
   <script type="text/javascript" src="../ui.js"></script>
+  <div class="footer">
+    <i class="fa fa-terminal" aria-hidden="true"></i> with
+    <i class="fa fa-heart" aria-hidden="true"></i> by  PAT and ANDREW
+  </div>
 </body>
 </html>

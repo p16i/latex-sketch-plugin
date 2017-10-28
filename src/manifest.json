@@ -8,16 +8,21 @@
       "script": "./my-command.js"
     },
     {
-      "name": "Launch",
+      "name": "Insert",
       "identifier": "launch-web-view",
       "script": "./launch-web-view.js"
+    },
+    {
+      "name": "Edit",
+      "identifier": "edit",
+      "script": "./edit-web-view.js"
     }
   ],
   "menu": {
     "title": "latex-sketch-plugin",
     "items": [
-      "my-command-identifier",
-      "launch-web-view"
+      "launch-web-view",
+      "edit"
     ]
   }
 }

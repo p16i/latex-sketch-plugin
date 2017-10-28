@@ -11,7 +11,8 @@
   },
   "resources": [
     "resources/ui.js",
-    "src/placeSvg.js"
+    "src/placeSvg.js",
+    "src/webui.js"
   ],
   "scripts": {
     "build": "skpm-build",
