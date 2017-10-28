@@ -10,7 +10,7 @@
     "main": "plugin.sketchplugin"
   },
   "resources": [
-    "resources/ui.js",
+    "resources/editor.js",
     "src/placeSvg.js",
     "src/webui.js"
   ],

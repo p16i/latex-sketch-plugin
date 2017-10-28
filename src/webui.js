@@ -1,8 +1,8 @@
 import WebUI from 'sketch-module-web-view';
-import placeSvg from './placeSvg';
+import placeSvg from './place-svg';
 
 export default function(context, isCalledFromEditMenu) {
-    let webUI = new WebUI(context, require('../resources/ui.html'),   {
+    let webUI = new WebUI(context, require('../resources/editor.html'),   {
         identifier: 'unique.id' + Math.random(),
         x: 0,
         y: 0,

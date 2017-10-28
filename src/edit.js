@@ -15,7 +15,4 @@ export default function (context) {
     }
 
     webui(context, true);
-
-    log('End Edit.js');
-
 }
