@@ -5,16 +5,16 @@ export default function(context, content, oldLayer) {
   context.document.showMessage("He, It's alieve 🙌");
 
   let document = sketch.selectedDocument
-  log('Document');
-  log(document);
+  // log('Document');
+  // log(document);
   // log(SVGImporter);
 
   // let page = context.document.pages;
   // log(page)
   //
   let page = document.selectedPage
-  log('>> artboard')
-  log(content);
+  // log('>> artboard')
+  // log(content);
 
   let xmlSVG = `<?xml version="1.0" encoding="UTF-8"?>${content.svg}`;
   let svgString = NSString.stringWithString(xmlSVG);
@@ -40,23 +40,23 @@ export default function(context, content, oldLayer) {
     let artboardFrame = artboard.frame();
 
     let svgFrame = svgLayer.frame();
-    log('artboard frame');
-    log(artboardFrame.width());
-    log('---------');
+    // log('artboard frame');
+    // log(artboardFrame.width());
+    // log('---------');
     // log('svg frame');
     // log(svgFrame);
     let newWidth = artboardFrame.width()*scalingFactor;
     let newHeight = svgFrame.height() / svgFrame.width() * newWidth;
 
     // let newFrame =
-    log(newWidth);
-    log(newHeight);
+    // log(newWidth);
+    // log(newHeight);
 
     svgFrame.width = newWidth;
     svgFrame.height = newHeight;
 
 
-    log(svgLayer.style());
+    // log(svgLayer.style());
 
     if(oldLayer) {
         log('there is oldLayer')
@@ -73,6 +73,7 @@ export default function(context, content, oldLayer) {
     }
 
     artboard.addLayer(svgLayer);
+    // log(svgLayer.children());
     let children = svgLayer.children();
 
 

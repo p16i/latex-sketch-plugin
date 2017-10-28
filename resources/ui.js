@@ -50,7 +50,10 @@ const setLatex = function(txt, updateTextField) {
       console.log('update');
     input.value = txt;
   }
-  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+
+  if(MathJax) {
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+  }
 }
 
 input.addEventListener('input', process);
