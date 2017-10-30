@@ -1,7 +1,7 @@
 # Latex Sketch Plugin
 
-This plugin brings LaTeX functionalities to Sketch. This allows us to directly write mathematical formulas in Sketch itself.
-It is based on `MathJax`'s API.
+This plugin brings LaTeX functionalities to Sketch. It allows us to write mathematical formulas directly inside Sketch.
+The implementation is based on `MathJax`'s API.
 
 ![](https://i.imgur.com/yPD2n7m.gif)
 
