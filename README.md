@@ -7,6 +7,14 @@ The implementation is based on `MathJax`'s API.
 
 This plugin was developed  during [Sketch Plugin Hackathon](https://designtoolsberlin.com/), Berlin, 27 + 28 October 2017.
 
+
+## Installing
+1. Build the plugin locally using the **CLI Commands** <br>
+   *or* <br>
+   download `latex-sketch-plugin.sketchplugin`
+2. copy the plugin to your Sketch plugin folder: <br> ~/Library/Application Support/com.bohemiancoding.sketch3/Plugins
+
+
 ## CLI Commands
 
 ``` bash
@@ -16,7 +24,6 @@ npm run watch
 # build for production
 npm run build
 ```
-
 
 ## Debugging
 
@@ -38,7 +45,7 @@ The `-f` option causes `skpm log` to not stop when the end of logs is reached, b
 - Andrew Nicolaou
 
 
-## Acknoledgements
+## Acknowledgements
 - Pieter Omvlee and Mathieu Dutour for supports during the hackathon.
 - Roy van Rooijen, Sergi Miral, IXDS Berlin and all people behind `Design Tools Berlin` for organizing this hackathon.
 
