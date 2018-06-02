@@ -15,6 +15,9 @@ npm run watch
 
 # build for production
 npm run build
+
+# for publishing
+skpm publish minor
 ```
 
 
