@@ -7,9 +7,14 @@
   <title>Document</title>
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-      jax: ["input/TeX", 'output/SVG', 'output/PreviewHTML'],
+      jax: ["input/TeX", 'output/SVG'],
       extensions: ["tex2jax.js"],
-      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]}
+      tex2jax: {inlineMath: [["$","$"],["\\(","\\)"]]},
+      SVG: {
+        blacker: 0,
+        useGlobalCache: false,
+        useFontCache: false
+      }
     });
   </script>
     <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
@@ -56,6 +61,7 @@
             border-top: 1px dotted grey;
             margin: auto;
             position: relative;
+            z-index: 100;
         }
 
         .preview-desc {
@@ -67,6 +73,11 @@
             font-size: 12px;
             font-family: sans-serif;
             text-transform: uppercase;
+        }
+
+        #bt-submit {
+            z-index: 1000;
+            position: relative;
         }
     </style>
 </head>

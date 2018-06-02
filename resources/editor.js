@@ -14,21 +14,8 @@ const returnsSvg = function () {
   let svgParent = document.getElementsByClassName('MathJax_SVG')[0];
 
   let svg = svgParent.children[0];
-  let refs = svg.querySelectorAll('use');
 
-
-  for(let i = 0; i < refs.length; i++ ){
-      let ru = refs[i]
-
-      let id = ru.getAttribute('href').replace('#','');
-
-      let actual = document.getElementById(id);
-
-      ru.innerHTML = actual.outerHTML;
-
-  }
-
-  let data = svg.outerHTML.replace(/stroke-width="\d+"/g,'')
+  let data = svg.outerHTML;
 
   let latexStr = input.value;
 
