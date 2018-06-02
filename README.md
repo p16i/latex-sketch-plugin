@@ -7,6 +7,9 @@ The implementation is based on `MathJax`'s API.
 
 This plugin was developed  during [Sketch Plugin Hackathon](https://designtoolsberlin.com/), Berlin, 27 + 28 October 2017.
 
+## Installation
+The pluging can be downloaded from the [Release page](https://github.com/heytitle/latex-sketch-plugin/releases). 
+
 ## CLI Commands
 
 ``` bash
