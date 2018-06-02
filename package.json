@@ -7,7 +7,7 @@
   "skpm": {
     "name": "latex-sketch-plugin",
     "manifest": "src/manifest.json",
-    "main": "plugin.sketchplugin"
+    "main": "latex-sketch-plugin.sketchplugin"
   },
   "resources": [
     "resources/editor.js",

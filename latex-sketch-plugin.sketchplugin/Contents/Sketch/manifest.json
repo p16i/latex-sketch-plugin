@@ -1,0 +1,27 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Insert",
+      "identifier": "insert",
+      "script": "insert.js"
+    },
+    {
+      "name": "Edit",
+      "identifier": "edit",
+      "script": "edit.js"
+    }
+  ],
+  "menu": {
+    "title": "LATEX ⚡ SKETCH",
+    "items": [
+      "insert",
+      "edit"
+    ]
+  },
+  "version": "5.0.0",
+  "name": "latex-sketch-plugin",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/heytitle/latex-sketch-plugin/master/.appcast.xml"
+}
