@@ -13,6 +13,11 @@
     ],
     "sketch-assets-file": "sketch-assets/icons.sketch"
   },
+  "description": "Let's write LaTeX in Sketch",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/heytitle/latex-sketch-plugin.git"
+  },
   "scripts": {
     "build": "rm -rf latex-sketch-plugin.sketchplugin && skpm-build",
     "watch": "skpm-build --watch",
