@@ -1,5 +1,7 @@
 # Latex Sketch Plugin
 
+[![](https://img.shields.io/github/downloads/heytitle/latex-sketch-plugin/total)](https://github.com/heytitle/latex-sketch-plugin/releases/tag/v7.0.0)
+
 This plugin brings LaTeX functionalities to Sketch. It allows us to write mathematical formulas directly inside Sketch.
 The implementation is based on `MathJax`'s API.
 
@@ -8,6 +10,7 @@ The implementation is based on `MathJax`'s API.
 This plugin was developed  during [Sketch Plugin Hackathon](https://designtoolsberlin.com/), Berlin, 27 + 28 October 2017.
 
 ## Installation
+
 The pluging can be downloaded from the [Release page](https://github.com/heytitle/latex-sketch-plugin/releases). 
 
 ### For Sketch version below 63.3
