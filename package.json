@@ -1,0 +1,60 @@
+{
+  "name": "latex-sketch-plugin",
+  "version": "6.0.0",
+  "engines": {
+    "sketch": ">=66.1"
+  },
+  "skpm": {
+    "name": "latex-sketch-plugin",
+    "manifest": "src/manifest.json",
+    "main": "latex-sketch-plugin.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ],
+    "sketch-assets-file": "sketch-assets/icons.sketch"
+  },
+  "scripts": {
+    "build": "rm -rf latex-sketch-plugin.sketchplugin && skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.7.4",
+    "@skpm/extract-loader": "^2.0.2",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-sketch": "^0.2.4",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.20.0",
+    "html-loader": "^0.5.5",
+    "lint-staged": "^10.2.2",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "url-loader": "^4.1.0"
+  },
+  "resources": [
+    "resources/**/*.js"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "mathjax-node": "^2.1.1",
+    "net": "^1.0.2",
+    "react-mathjax-preview-svg": "^1.0.5",
+    "sketch-module-web-view": "^3.1.4"
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
+  "lint-staged": {
+    "*.js(x)": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "author": "Pat Chormai <pat.chormai@gmail.com>"
+}

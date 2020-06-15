@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended",
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "sketch"
+  ],
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "off",
+    "no-redeclare": "error",
+    "import/no-unresolved": [2, { "commonjs": true, "amd": true }]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "plugins": ["import"]
+}

@@ -1,0 +1,24 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Insert",
+      "identifier": "latex-sketch-plugin-v2.insert",
+      "script": "./insert.js",
+      "handlers": {
+        "run": "onRun",
+        "actions": {
+          "Shutdown": "onShutdown"
+        }
+      },
+      "shortcut": "ctrl shift l"
+    }
+  ],
+  "menu": {
+    "title": "LaTeX ⚡️ Sketch",
+    "items": [
+      "latex-sketch-plugin-v2.insert"
+    ]
+  }
+}
