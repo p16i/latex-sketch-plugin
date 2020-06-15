@@ -13,9 +13,9 @@ This plugin was developed  during [Sketch Plugin Hackathon](https://designtoolsb
 
 The pluging can be downloaded from the [Release page](https://github.com/heytitle/latex-sketch-plugin/releases). 
 
-### For Sketch version below 63.3
+### For Sketch version below 61.1
 
-The latest version that supports Sketch version below 63.3 is [v0.5.2](https://github.com/heytitle/latex-sketch-plugin/releases/tag/v5.2.0).
+The latest version that supports Sketch version below 61.1 is [v0.5.2](https://github.com/heytitle/latex-sketch-plugin/releases/tag/v5.2.0).
 
 ## CLI Commands
 
