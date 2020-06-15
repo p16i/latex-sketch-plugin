@@ -1,6 +1,6 @@
 {
   "name": "latex-sketch-plugin",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "engines": {
     "sketch": ">=66.1"
   },
@@ -15,8 +15,8 @@
   },
   "description": "Let's write LaTeX in Sketch",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/heytitle/latex-sketch-plugin.git"
+    "type": "git",
+    "url": "https://github.com/heytitle/latex-sketch-plugin.git"
   },
   "scripts": {
     "build": "rm -rf latex-sketch-plugin.sketchplugin && skpm-build",
